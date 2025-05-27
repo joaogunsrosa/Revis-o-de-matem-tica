@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, blue, white);
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-left: 925px;
+        }
+        #display {
+            width: 100%;
+            height: 50px;
+            font-size: 1em;
+            text-align: right;
+            border: none;
+            margin-bottom: 10px;
+            padding: 1px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 5px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: black;
+            color: white;
+        }
+        button:hover {
+            background: #e83958;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button onclick="clearDisplay()">on</button>
+            <button onclick="appendCharacter('/')">÷</button>
+            <button onclick="appendCharacter('*')">×</button>
+            <button onclick="appendCharacter('-')">−</button>
+            <button onclick="appendCharacter('7')">7</button>
+            <button onclick="appendCharacter('8')">8</button>
+            <button onclick="appendCharacter('9')">9</button>
+            <button onclick="appendCharacter('+')">+</button>
+            <button onclick="appendCharacter('4')">4</button>
+            <button onclick="appendCharacter('5')">5</button>
+            <button onclick="appendCharacter('6')">6</button>
+            <button onclick="appendCharacter('.')">.</button>
+            <button onclick="appendCharacter('1')">1</button>
+            <button onclick="appendCharacter('2')">2</button>
+            <button onclick="appendCharacter('3')">3</button>
+            <button onclick="appendCharacter('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="scientificFunction('sin')">sin</button>
+            <button onclick="scientificFunction('cos')">cos</button>
+            <button onclick="scientificFunction('tan')">tan</button>
+            <button onclick="scientificFunction('log')">log</button>
+            <button onclick="scientificFunction('sqrt')">√</button>
+            <button onclick="scientificFunction('pow')">x²</button>
+        </div>
+    </div>
+
+    <script>
+        function appendCharacter(char) {
+            document.getElementById("display").value += char;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function calculate() {
+            try {
+                document.getElementById("display").value = eval(document.getElementById("display").value);
+            } catch {
+                document.getElementById("display").value = "Erro";
+            }
+        }
+
+        function deleteLastCharacter() {
+             let display = document.getElementById("display").value;
+                document.getElementById("display").value = display.slice(0, -1);
+        }
+
+        function scientificFunction(func) {
+            let value = parseFloat(document.getElementById("display").value);
+            if (!isNaN(value)) {
+                switch(func) {
+                    case 'sin': value = Math.sin(value); break;
+                    case 'cos': value = Math.cos(value); break;
+                    case 'tan': value = Math.tan(value); break;
+                    case 'log': value = Math.log10(value); break;
+                    case 'sqrt': value = Math.sqrt(value); break;
+                    case 'pow': value = Math.pow(value, 2); break;
+                }
+                document.getElementById("display").value = value;
+            }
+        }
+    </script>
+</body>
+</html>
