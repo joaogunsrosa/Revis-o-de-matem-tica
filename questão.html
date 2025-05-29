@@ -98,15 +98,7 @@
     padding: 20px;
 }
 
-.questions {
-    width: 60%;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 200px;
 
-}
 
 .calculator-container {
     display: flex;
@@ -130,25 +122,48 @@
 }
 
 
-        
-    </style>
+    .questions {
+        width: 60%;
+        height: 200px; /* Define uma altura fixa */
+        overflow-y: auto; /* Adiciona rolagem vertical */
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        margin-top: 200px;
+        overflow-y: scroll;
+        margin-bottom: 15px;
+    }
+
+     p {
+    margin-bottom: 50px; /* Adiciona espaçamento entre os parágrafos */
+}
+
+     #ai{
+        color:blue;
+     }
+</style>
+
+
+
+
+
 </head>
 <body>
 
-    
-        <h2 id="sim">Corpo do Futuro</h2>
+  <h2 id="sim">matématica</h2>
     
 
-<div class="layout">
     <div class="questions">
-        <h2>Perguntas</h2>
-        <p>Quantos é 1 + 1?</p>
-    </div>
+    <h2 id="ai" >Perguntas</h2>
+    <p>Quantos é 1 + 1?</p>
+    <p>Quantos é 5 - 3?</p>
+    <p>Quantos é 7 x 7?</p>
+    <p>Quantos é 30 </p>
+    <p>Qual é a raiz quadrada de 16?</p>
+</div>
 
-     <div class="questions">
-        <h2>Perguntas</h2>
-        <p>Quantos é 1 + 1?</p>
-    </div>
+
 
     <div class="calculator-container">
         <div class="wall"></div>
