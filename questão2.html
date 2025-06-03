@@ -123,7 +123,9 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+     margin-left: 915px; 
 }
+
 
 
     .questions {
@@ -134,7 +136,7 @@
         background: rgba(255, 255, 255, 0.9);
         border-radius: 10px;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-        margin-top: 200px;
+        margin-top: 220px;
         overflow-y: scroll;
         margin-bottom: 15px;
     }
@@ -157,6 +159,20 @@
 
 }
 
+.notepad {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    background-color: #f9f9f9;
+}
+
+
 </style>
 
 
@@ -167,80 +183,131 @@
 <body>
     
 
-  <h2 id="sim">matématica basica</h2>
+  
 
+<h2 id="sim">matemática intermédiaria</h2>
+
+<div class="layout">
+    <!-- Coluna das perguntas -->
     <div class="questions">
         <h2 id="ai">Perguntas</h2>
-    
+        <!-- Aqui ficam todas as perguntas (1) até (10) -->
+         <div class="question">
+    <p><span class="numero">(1)</span> João comprou um produto por R$ 120,00 com 25% de desconto. Qual era o preço original?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) R$ 140,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) R$ 160,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) R$ 150,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) R$ 145,00</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
 
-        <div class="question">
-            <p><span class="numero">(1)</span> Quanto é 1 + 1?</p>
-            <div class="oi">
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 1</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) 2</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 3</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 4</button>
-            </div>
-        </div>
-    
-        <div class="question">
-            <p><span class="numero">(2)</span> Quanto é 5 - 3?</p>
-            <div class="oi">
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 1</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) 5</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="true">c) 2</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 4</button>
-            </div>
-        </div>
-    
-        <div class="question">
-            <p><span class="numero">(3)</span> Quanto é 7 x 7?</p>
-            <div class="oi">
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 48</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) 50</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="true">c) 49</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 52</button>
-            </div>
-        </div>
-    
-        <div class="question">
-            <p><span class="numero">(4)</span> Quanto é 30 / 3?</p>
-            <div class="oi">
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 5</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) 10</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 15</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 20</button>
-            </div>
-        </div>
-    
-        <div class="question">
-            <p><span class="numero">(5)</span> Quanto é 3²?</p>
-            <div class="oi">
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 6</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) 9</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 12</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 8</button>
-            </div>
-        </div>
-    
-        <div class="question">
-            <p><span class="numero">(6)</span> Qual é a raiz quadrada de 16?</p>
-            <div class="oi">
-                <button id="oi" onclick="checkAnswer(this)" data-correct="true">a) 4</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) 3</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 5</button>
-                <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 6</button>
-            </div>
-        </div>
-    
-        <br><br>
+<div class="question">
+    <p><span class="numero">(2)</span> Resolva a equação: 2x - 5 = 9</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) x = 5</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) x = 7</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) x = 6</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) x = 8</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(3)</span> Qual é a área de um triângulo com base 10 cm e altura 8 cm?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 80 cm²</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) 40 cm²</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 30 cm²</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 50 cm²</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(4)</span> Qual é o resultado de: \( \frac{3}{4} + \frac{2}{5} \)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) \( \frac{5}{9} \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) \( \frac{1}{2} \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">c) \( \frac{23}{20} \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) \( \frac{21}{25} \)</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(5)</span> Em uma receita, a proporção entre farinha e açúcar é de 3:2. Se foram usadas 600g de farinha, quanto de açúcar foi usado?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 350g</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) 400g</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 450g</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 300g</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(6)</span> Qual é o valor de \( 2^3 + 3^2 \)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 14</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) 13</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">c) 17</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 18</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(7)</span> Um carro percorre 240 km em 3 horas. Qual é a sua velocidade média?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">a) 80 km/h</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) 60 km/h</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 70 km/h</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 100 km/h</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(8)</span> Qual é a solução da inequação: \( 2x + 3 > 11 \)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) x > 3</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) x > 4</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">c) x > 4</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) x < 5</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(9)</span> Uma loja aumenta o preço de um produto em 20%. Se o preço original era R$ 200,00, qual é o novo preço?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) R$ 210,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) R$ 220,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">c) R$ 240,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) R$ 260,00</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(10)</span> Qual é o valor de \( \sqrt{81} + 2^4 \)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 23</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) 25</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 21</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 29</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+        <!-- ... (suas perguntas já estão corretas) -->
         <button onclick="showScore()" style="margin-top: 20px; background: blue; color: white; padding: 10px; font-size: 1em;">Verificar Respostas</button>
         <p id="score" style="font-weight: bold; font-size: 1.2em; color: green;"></p>
     </div>
-    
 
+    <!-- Coluna da calculadora (fora das perguntas) -->
     <div class="calculator-container">
-        <div class="wall"></div>
         <div class="calculator">
             <input type="text" id="display" readonly>
             <div class="buttons">
@@ -271,6 +338,8 @@
         </div>
     </div>
 </div>
+
+
             
 
     <script>
@@ -339,7 +408,7 @@ function checkAnswer(button) {
 }
 
 function showScore() {
-    document.getElementById("score").innerText = `Você acertou ${score} de 6 perguntas.`;
+    document.getElementById("score").innerText = `Você acertou ${score} de 10 perguntas.`;
 }
 
 
