@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+             background: linear-gradient(45deg, red,rgb(101, 101, 110) );
+            font-family: Arial, sans-serif;
+        }
+
+          header {
+            
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        #oi{
+             background:rgb(101, 101, 110) ;
+             display: flex;
+             flex-wrap: wrap;
+             gap: 10px;
+             margin-bottom: 10px;
+
+
+        }
+
+         #sim{
+            padding-right: 0px;
+            padding-left: 10px;
+            font-family: 'Poppins', sans-serif;
+             font-size: 50px;
+             font-weight: bold;
+             color: #fff;
+             background: linear-gradient(45deg, red,rgb(101, 101, 110) );
+             padding: 20px 40px;
+             border-radius: 15px;
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+             text-transform: uppercase;
+             letter-spacing: 2px;
+             text-align: center;
+             position: absolute;
+             top: 0;
+             left: 50%;
+             transform: translateX(-50%);
+             margin-top: 40px;
+
+        }
+
+        .calculator {
+             background: linear-gradient(45deg,rgb(101, 101, 110) ,red );
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-left: 925px;
+        }
+        #display {
+            width: 100%;
+            height: 50px;
+            font-size: 1em;
+            text-align: right;
+            border: none;
+            margin-bottom: 10px;
+            padding: 1px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 5px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: black;
+            color: white;
+        }
+        button:hover {
+            background: #e83958;
+        }
+
+        p{
+            margin-right: 1px;
+        }
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+
+
+
+.calculator-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 40%;
+}
+
+.wall {
+    width: 5px;
+    height: 100vh;
+    background: gray;
+}
+
+.calculator {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+     margin-left: 915px; 
+}
+
+
+
+    .questions {
+        width: 60%;
+        height: 300px; /* Define uma altura fixa */
+        overflow-y: auto; /* Adiciona rolagem vertical */
+        padding: 20px;
+         color: #fff;
+             background: linear-gradient(45deg,rgb(101, 101, 110) ,red );
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        margin-top: 220px;
+        overflow-y: scroll;
+        margin-bottom: 15px;
+    }
+
+     p {
+    margin-bottom: 100px; /* Adiciona espaçamento entre os parágrafos */
+}
+
+     #ai{
+        color:red;
+     }
+
+     .numero {
+    font-weight: bold;
+    color: red;
+    
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+
+}
+
+.notepad {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    background-color: #f9f9f9;
+}
+
+
+</style>
+
+
+
+
+
+</head>
+<body>
+    
+
+  
+
+<h2 id="sim">matemática avançada</h2>
+
+<div class="layout">
+    <!-- Coluna das perguntas -->
+    <div class="questions">
+        <h2 id="ai">Perguntas</h2>
+        <!-- Aqui ficam todas as perguntas (1) até (10) -->
+       <div class="question">
+    <p><span class="numero">(1)</span> Resolva: \( x^2 - 7x + 12 = 0 \)</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> x = 3 ou x = 4</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> x = 2 ou x = 6</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> x = 1 ou x = 12</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> x = 5 ou x = 2</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(2)</span> Qual é o valor de \( \log_3(81) \)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> 2</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">b)</span> 4</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> 3</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 5</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(3)</span> Se \( f(x) = 2x^2 - 3x + 1 \), então \( f(3) = ? \)</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> 12</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">b)</span> 10</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> 8</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 6</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(4)</span> Qual é o valor de \( \sin(60^\circ) + \cos(30^\circ) \)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> \( \sqrt{3} \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> 1</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> \( 2\sqrt{3} \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 2</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(5)</span> Se a matriz A é \( \begin{bmatrix}2 & 3 \\ 1 & 4\end{bmatrix} \), qual é o determinante de A?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> 5</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> 10</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> -5</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 7</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(6)</span> Qual é o valor de \( \lim_{x \to 0} \frac{\sin(x)}{x} \)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> 1</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> 0</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> ∞</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> Não existe</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(7)</span> Qual é a equação da reta que passa pelos pontos (2, 3) e (4, 7)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> y = 2x - 1</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> y = 3x + 1</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> y = x + 3</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> y = 4x + 2</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(8)</span> Se \( a_n = 2^n \), qual é o valor do 5º termo dessa progressão?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> 16</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> 32</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">c)</span> 64</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 128</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(9)</span> O gráfico de \( f(x) = |x - 3| \) tem um vértice em:</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> (3, 3)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">b)</span> (3, 0)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> (0, 3)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> (0, 0)</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+<div class="question">
+    <p><span class="numero">(10)</span> Qual é o resultado da integral \( \int x dx \)?</p>
+    <div class="oi">
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> \( x \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> \( \frac{x}{2} \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">c)</span> \( \frac{x^2}{2} + C \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> \( \ln x \)</button>
+    </div>
+    <textarea class="notepad" placeholder="Rascunho..."></textarea>
+</div>
+
+        <!-- ... (suas perguntas já estão corretas) -->
+        <button onclick="showScore()" style="margin-top: 20px; background: blue; color: white; padding: 10px; font-size: 1em;">Verificar Respostas</button>
+        <p id="score" style="font-weight: bold; font-size: 1.2em; color: green;"></p>
+    </div>
+
+    <!-- Coluna da calculadora (fora das perguntas) -->
+    <div class="calculator-container">
+        <div class="calculator">
+            <input type="text" id="display" readonly>
+            <div class="buttons">
+                <button onclick="clearDisplay()">on</button>
+                <button onclick="appendCharacter('/')">÷</button>
+                <button onclick="appendCharacter('*')">×</button>
+                <button onclick="appendCharacter('-')">−</button>
+                <button onclick="appendCharacter('7')">7</button>
+                <button onclick="appendCharacter('8')">8</button>
+                <button onclick="appendCharacter('9')">9</button>
+                <button onclick="appendCharacter('+')">+</button>
+                <button onclick="appendCharacter('4')">4</button>
+                <button onclick="appendCharacter('5')">5</button>
+                <button onclick="appendCharacter('6')">6</button>
+                <button onclick="appendCharacter('.')">.</button>
+                <button onclick="appendCharacter('1')">1</button>
+                <button onclick="appendCharacter('2')">2</button>
+                <button onclick="appendCharacter('3')">3</button>
+                <button onclick="appendCharacter('0')">0</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="scientificFunction('sin')">sin</button>
+                <button onclick="scientificFunction('cos')">cos</button>
+                <button onclick="scientificFunction('tan')">tan</button>
+                <button onclick="scientificFunction('log')">log</button>
+                <button onclick="scientificFunction('sqrt')">√</button>
+                <button onclick="scientificFunction('pow')">x²</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+
+    <script>
+        function appendCharacter(char) {
+            document.getElementById("display").value += char;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function calculate() {
+            try {
+                document.getElementById("display").value = eval(document.getElementById("display").value);
+            } catch {
+                document.getElementById("display").value = "Erro";
+            }
+        }
+
+        function deleteLastCharacter() {
+             let display = document.getElementById("display").value;
+                document.getElementById("display").value = display.slice(0, -1);
+        }
+
+        function scientificFunction(func) {
+            let value = parseFloat(document.getElementById("display").value);
+            if (!isNaN(value)) {
+                switch(func) {
+                    case 'sin': value = Math.sin(value); break;
+                    case 'cos': value = Math.cos(value); break;
+                    case 'tan': value = Math.tan(value); break;
+                    case 'log': value = Math.log10(value); break;
+                    case 'sqrt': value = Math.sqrt(value); break;
+                    case 'pow': value = Math.pow(value, 2); break;
+                }
+                document.getElementById("display").value = value;
+            }
+        }
+
+
+        let score = 0;
+let answeredQuestions = new Set();
+
+function checkAnswer(button) {
+    const questionDiv = button.closest('.question');
+
+    if (answeredQuestions.has(questionDiv)) return;
+
+    const buttons = questionDiv.querySelectorAll('button');
+    buttons.forEach(btn => btn.disabled = true);
+
+    answeredQuestions.add(questionDiv);
+
+    if (button.dataset.correct === "true") {
+        score++;
+        button.style.backgroundColor = "green";
+    } else {
+        button.style.backgroundColor = "red";
+        // Marcar a certa também (opcional)
+        buttons.forEach(btn => {
+            if (btn.dataset.correct === "true") {
+                btn.style.backgroundColor = "green";
+            }
+        });
+    }
+}
+
+function showScore() {
+    document.getElementById("score").innerText = `Você acertou ${score} de 10 perguntas.`;
+}
+
+
+    </script>
+</body>
+</html>
