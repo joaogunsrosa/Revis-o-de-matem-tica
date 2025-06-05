@@ -179,6 +179,14 @@
     background-color: #f9f9f9;
 }
 
+.alternativas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
 
 </style>
 
@@ -201,111 +209,111 @@
         <!-- Aqui ficam todas as perguntas (1) até (10) -->
        <div class="question">
     <p><span class="numero">(1)</span> Resolva: \( x^2 - 7x + 12 = 0 \)</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> x = 3 ou x = 4</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> x = 2 ou x = 6</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> x = 1 ou x = 12</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> x = 5 ou x = 2</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(2)</span> Qual é o valor de \( \log_3(81) \)?</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> 2</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">b)</span> 4</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> 3</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 5</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(3)</span> Se \( f(x) = 2x^2 - 3x + 1 \), então \( f(3) = ? \)</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> 12</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">b)</span> 10</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> 8</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 6</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(4)</span> Qual é o valor de \( \sin(60^\circ) + \cos(30^\circ) \)?</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> \( \sqrt{3} \)</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> 1</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> \( 2\sqrt{3} \)</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 2</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(5)</span> Se a matriz A é \( \begin{bmatrix}2 & 3 \\ 1 & 4\end{bmatrix} \), qual é o determinante de A?</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> 5</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> 10</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> -5</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 7</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(6)</span> Qual é o valor de \( \lim_{x \to 0} \frac{\sin(x)}{x} \)?</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> 1</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> 0</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> ∞</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> Não existe</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(7)</span> Qual é a equação da reta que passa pelos pontos (2, 3) e (4, 7)?</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> y = 2x - 1</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> y = 3x + 1</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> y = x + 3</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> y = 4x + 2</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(8)</span> Se \( a_n = 2^n \), qual é o valor do 5º termo dessa progressão?</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> 16</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> 32</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">c)</span> 64</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> 128</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(9)</span> O gráfico de \( f(x) = |x - 3| \) tem um vértice em:</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> (3, 3)</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">b)</span> (3, 0)</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> (0, 3)</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> (0, 0)</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
 <div class="question">
     <p><span class="numero">(10)</span> Qual é o resultado da integral \( \int x dx \)?</p>
-    <div class="oi">
+    <div class="oi"><div class="alternativas">
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> \( x \)</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">b)</span> \( \frac{x}{2} \)</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">c)</span> \( \frac{x^2}{2} + C \)</button>
         <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> \( \ln x \)</button>
-    </div>
+    </div></div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
 
