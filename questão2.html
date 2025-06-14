@@ -136,7 +136,7 @@
         background: rgba(255, 255, 255, 0.9);
         border-radius: 10px;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-        margin-top: 220px;
+        margin-top: 250px;
         overflow-y: scroll;
         margin-bottom: 15px;
     }
@@ -185,6 +185,15 @@
     font-size: 1em;
 }
 
+.numero {
+    font-weight: bold;
+    color: red;
+    
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+
+}
 
 
 </style>
@@ -209,10 +218,10 @@
          <div class="question">
     <p><span class="numero">(1)</span> João comprou um produto por R$ 120,00 com 25% de desconto. Qual era o preço original?</p>
     <div class="oi">
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) R$ 140,00</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) R$ 160,00</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) R$ 150,00</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) R$ 145,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> R$ 140,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">b)</span> R$ 160,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">c)</span> R$ 150,00</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">d)</span> R$ 145,00</button>
     </div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
@@ -220,10 +229,10 @@
 <div class="question">
     <p><span class="numero">(2)</span> Resolva a equação: 2x - 5 = 9</p>
     <div class="oi">
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) x = 5</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) x = 7</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) x = 6</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) x = 8</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> x = 5</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true"><span class="numero">a)</span> x = 7</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> x = 6</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false"><span class="numero">a)</span> x = 8</button>
     </div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
@@ -240,15 +249,16 @@
 </div>
 
 <div class="question">
-    <p><span class="numero">(4)</span> Qual é o resultado de: \( \frac{3}{4} + \frac{2}{5} \)?</p>
+    <p><span class="numero">(4)</span> Qual é o perímetro de um retângulo com 5 cm de largura e 8 cm de comprimento?</p>
     <div class="oi">
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) \( \frac{5}{9} \)</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) \( \frac{1}{2} \)</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="true">c) \( \frac{23}{20} \)</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) \( \frac{21}{25} \)</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 30 cm</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) 26 cm</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 40 cm</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 13 cm</button>
     </div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
+
 
 <div class="question">
     <p><span class="numero">(5)</span> Em uma receita, a proporção entre farinha e açúcar é de 3:2. Se foram usadas 600g de farinha, quanto de açúcar foi usado?</p>
@@ -306,15 +316,16 @@
 </div>
 
 <div class="question">
-    <p><span class="numero">(10)</span> Qual é o valor de \( \sqrt{81} + 2^4 \)?</p>
+    <p><span class="numero">(10)</span> Qual é a área de um círculo com raio de 7 cm? (Use π ≈ 3,14)</p>
     <div class="oi">
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 23</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="true">b) 25</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">c) 21</button>
-        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 29</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">a) 100,38 cm²</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">b) 120,94 cm²</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="true">c) 153,86 cm²</button>
+        <button id="oi" onclick="checkAnswer(this)" data-correct="false">d) 138,22 cm²</button>
     </div>
     <textarea class="notepad" placeholder="Rascunho..."></textarea>
 </div>
+
         <!-- ... (suas perguntas já estão corretas) -->
         <button onclick="showScore()" style="margin-top: 20px; background: blue; color: white; padding: 10px; font-size: 1em;">Verificar Respostas</button>
         <p id="score" style="font-weight: bold; font-size: 1.2em; color: green;"></p>
